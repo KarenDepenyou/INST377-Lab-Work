@@ -23,7 +23,7 @@ function updateSlidePosition() {
     slide.classList.remove('visible');
     slide.classList.add('hidden');
   });
-  console.log(slidePosition);
+  // console.log(slidePosition);
   slides[slidePosition].classList.add('visible');
   // Using the .forEach array method, (array.forEach((element) => { per-element work goes here }))
   // loop through all the slides in your slideArray
@@ -56,6 +56,11 @@ function moveToPrevSlide() {
     and if so, sets your slidePosition to the last slide position in totalSlides
     if not, set the slidePosition to the current position minus one
   */
+  if (slidePosition === 0) {
+    slidePosition = totalSlides - 1;
+  } else {
+    slidePosition -= 1;
+  }
   updateSlidePosition();
 }
 
